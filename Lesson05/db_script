@@ -1,0 +1,11 @@
+USE `springlesson05`;
+
+DROP TABLE IF EXISTS books;
+CREATE TABLE books (
+	id int(11) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(100) DEFAULT NULL,
+    description_text VARCHAR(255) DEFAULT NULL,
+    year_manufacture int(5) DEFAULT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARSET=utf8;
+
