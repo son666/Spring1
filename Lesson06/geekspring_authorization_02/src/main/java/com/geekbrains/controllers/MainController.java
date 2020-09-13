@@ -31,9 +31,9 @@ public class MainController {
     }
 
     @Secured({"ROLE_ADMIN"})
-    @RequestMapping("/onlyYou")
+    @RequestMapping("/pageAdmin")
     @ResponseBody
-    public String onlyYou() {
+    public String pageAdmin() {
         return "index";
     }
 }

@@ -38,41 +38,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                // .failureUrl("/ohSh")
                 .loginProcessingUrl("/authenticateTheUser")
                 .permitAll()
                 .and()
                 .logout()
                 .permitAll();
-
-
-//        http.authorizeRequests()
-//                .antMatchers("/admin/**").hasRole("ADMIN")
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll()
-//                .and()
-//                .exceptionHandling().accessDeniedPage("/accessDenied");
-
-//        http.authorizeRequests()
-//                 .anyRequest().authenticated()
-//                .antMatchers("/").hasAnyRole("USER")
-//                .antMatchers("/admin/**").hasRole("ADMIN")
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                // .failureUrl("/ohSh")
-//                .loginProcessingUrl("/authenticateTheUser")
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll()
-//                .and()
-//                .exceptionHandling().accessDeniedPage("/accessDenied");
 
     }
 }

@@ -15,8 +15,4 @@ public class LoginController {
         return "access-denied";
     }
 
-//    @GetMapping("/ohSh")
-//    public String ohSh() {
-//        return "plain-login";
-//    }
 }
