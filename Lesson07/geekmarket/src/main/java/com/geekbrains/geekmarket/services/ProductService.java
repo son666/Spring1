@@ -55,6 +55,11 @@ public class ProductService {
         return pr.stream().collect(Collectors.toList());
     }
 
+    // post put
+    public Product saveOrUpdate(Product product) {
+        return productRepository.save(product);
+    }
+
     public List<Product> getProductsByVendorCode(String code) {
         return productRepository.findAllByVendorCode(code);
     }
