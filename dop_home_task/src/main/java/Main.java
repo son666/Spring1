@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Main {
 
@@ -22,8 +23,13 @@ public class Main {
                     obj.getChildren().add(childObj);
                 }
             }
-            System.out.println("id paren: " + obj.getId() + " -> Count child: " + obj.getChildren().size());
         }
-
+        //Удаляем дочерние элементы из списка
+        ListIterator<Object> iterator = objects.listIterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getParentId() != null) {
+                iterator.remove();
+            }
+        }
     }
 }
