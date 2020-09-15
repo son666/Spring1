@@ -114,4 +114,7 @@ VALUES
 
 INSERT INTO products (category_id, vendor_code, image, title, short_description, full_description, price)
 VALUES
-(1, "00000001", "null", "48\" LED TV Samsung U648000", "Телевизор Samsung 48", "LED телевизор Samsung 48", 35000.00);
+(1, "00000001", "null", "48\" LED TV Samsung U648000", "Телевизор Samsung 48", "LED телевизор Samsung 48", 35000.00),
+(1, "00000002", "null", "49\" LED TV Samsung U649000", "Телевизор Samsung 49", "LED телевизор Samsung 49", 45000.00),
+(1, "00000003", "null", "52\" LED TV Samsung U652000", "Телевизор Samsung 52", "LED телевизор Samsung 52", 55000.00),
+(2, "00000003", "null", "14\" Asus U14", "Ноутбук Asus U14", "Ноутбук Asus U14", 32000.00);

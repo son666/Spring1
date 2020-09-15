@@ -45,13 +45,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/admin/**").hasAnyRole("MANAGER", "ADMIN")
+                .antMatchers("/api/**").hasAnyRole("ADMIN")
+                .antMatchers("/api/**").permitAll()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .loginProcessingUrl("/authenticateTheUser")
-                .successHandler(customAuthenticationSuccessHandler)
-                .permitAll();
+                .httpBasic()
+                .and()
+                .csrf().ignoringAntMatchers("/api/**");
+
+
+//                .antMatchers("/admin/**").hasAnyRole("MANAGER", "ADMIN")
+//                .and()
+//                .formLogin()
+//                .loginPage("/login")
+//                .loginProcessingUrl("/authenticateTheUser")
+//                .successHandler(customAuthenticationSuccessHandler)
+//                .permitAll();
     }
 
     @Bean

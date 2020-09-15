@@ -2,9 +2,8 @@ package com.geekbrains.geekmarket.services;
 
 import com.geekbrains.geekmarket.entities.Product;
 import com.geekbrains.geekmarket.repositories.ProductRepository;
+import com.geekbrains.geekmarket.utils.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,8 +54,18 @@ public class ProductService {
         return pr.stream().collect(Collectors.toList());
     }
 
-    public List<Product> getProductsByVendorCode(String code) {
-        return productRepository.findAllByVendorCode(code);
+    // post put
+    public Product saveOrUpdate(Product product) {
+        return productRepository.save(product);
+    }
+
+    // delete
+    public void delete(Long id) {
+        Optional<Product> product = productRepository.findById(id);
+        if (!product.isPresent()) {
+            throw new ProductNotFoundException("Product with id = " + id + " not found");
+        }
+        productRepository.delete(product.get());
     }
 
     public Product getProductById(Long id) {
@@ -66,4 +75,9 @@ public class ProductService {
         }
         return null;
     }
+
+    public List<Product> getProductsByVendorCode(String code) {
+        return productRepository.findAllByVendorCode(code);
+    }
+
 }
