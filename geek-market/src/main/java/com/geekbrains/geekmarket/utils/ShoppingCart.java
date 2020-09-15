@@ -2,6 +2,7 @@ package com.geekbrains.geekmarket.utils;
 import com.geekbrains.geekmarket.entities.OrderItem;
 import com.geekbrains.geekmarket.entities.Product;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
